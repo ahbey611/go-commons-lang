@@ -813,3 +813,15 @@ func PrependIfMissing(str string, prefix string, prefixes ...string) string {
 func PrependIfMissingIgnoreCase(str string, prefix string, prefixes ...string) string {
 	return prependIfMissing(str, prefix, true, prefixes...)
 }
+
+// Equals checks if two strings are equal.
+func Equals(a, b string) bool {
+	if a == "" {
+		if b == "" {
+			return true
+		} else {
+			return false
+		}
+	}
+	return a == b
+}

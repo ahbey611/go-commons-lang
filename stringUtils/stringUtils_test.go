@@ -643,3 +643,21 @@ func TestPrependIfMissingIgnoreCase(t *testing.T) {
 		t.Errorf("fail test PrependIfMissingIgnoreCase 11")
 	}
 }
+
+func TestEquals(t *testing.T) {
+	if !Equals("abc", "abc") {
+		t.Errorf("fail test Equals 1")
+	}
+	if Equals("abc", "") {
+		t.Errorf("fail test Equals 2")
+	}
+	if Equals("", "abc") {
+		t.Errorf("fail test Equals 3")
+	}
+	if !Equals("", "") {
+		t.Errorf("fail test Equals 4")
+	}
+	if Equals("abc", "def") {
+		t.Errorf("fail test Equals 5")
+	}
+}
